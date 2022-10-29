@@ -1,11 +1,11 @@
 # Flask running on /patients list page
-![X](/assets/images/san-juan-mountains.jpg "X")
+![X](/images/patrick.png "X")
 
 # Detailed patient information view
-![X](/assets/images/san-juan-mountains.jpg "X")
+![X](/images/patrick.png "X")
 
 # Modal window 'Edit'
-![X](/assets/images/san-juan-mountains.jpg "X")
+![X](/images/patrick.png "X")
 
 # Modal window 'New Patient'
-![X](/assets/images/san-juan-mountains.jpg "X")
+![X](/images/patrick.png "X")
