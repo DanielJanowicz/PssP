@@ -1,11 +1,13 @@
 # Flask running on /patients list page
-![X](/images/patrick.png "X")
+![PatientList](/images/patientslist.png "Patients List")
 
 # Detailed patient information view
-![X](/images/patrick.png "X")
+![PatientInformation](/images/patientdetails.png "Patient Details")
+## Note:
+### Patient medications table was not created in earlier assignment due to complication and has been excluded from this assignment temporarily 
 
 # Modal window 'Edit'
-![X](/images/patrick.png "X")
+![PatientEdit](/images/patientedit.png "Patient Edit")
 
 # Modal window 'New Patient'
-![X](/images/patrick.png "X")
+![NewPatient](/images/newpatient.png "New Patient")

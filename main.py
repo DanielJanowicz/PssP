@@ -31,12 +31,18 @@ class Patients(db.Model):
     mrn = db.Column(db.String(255))
     first_name = db.Column(db.String(255))
     last_name = db.Column(db.String(255))
+    ssn = db.Column(db.String(255))
+    date_of_birth = db.Column(db.String(255))
+    zip_code = db.Column(db.String(255))
 
     # this first function __init__ is to establish the class for python GUI
-    def __init__(self, mrn, first_name, last_name):
+    def __init__(self, mrn, first_name, last_name, ssn, date_of_birth, zip_code):
         self.mrn = mrn
         self.first_name = first_name
         self.last_name = last_name
+        self.ssn = ssn
+        self.date_of_birth = date_of_birth
+        self.zip_code = zip_code
 
     # this second function is for the API endpoints to return JSON 
     def to_json(self):
@@ -44,11 +50,14 @@ class Patients(db.Model):
             'id': self.id,
             'mrn': self.mrn,
             'first_name': self.first_name,
-            'last_name': self.last_name
+            'last_name': self.last_name,
+            'ssn': self.ssn,
+            'date_of_birth': self.date_of_birth,
+            'zip_code': self.zip_code
         }
 
 class Conditions_patient(db.Model):
-    __tablename__ = 'production_patient_conditions'
+    __tablename__ = 'production_patients_conditions'
 
     id = db.Column(db.Integer, primary_key=True)
     mrn = db.Column(db.String(255), db.ForeignKey('production_patients.mrn'))
@@ -190,10 +199,10 @@ def delete(mrn): # note this function needs to match name in html form action
 def get_patient_details(mrn):
     patient_details = Patients.query.filter_by(mrn=mrn).first()
     patient_conditions = Conditions_patient.query.filter_by(mrn=mrn).all()
-    patient_medications = Medications_patient.query.filter_by(mrn=mrn).all()
+    #patient_medications = Medications_patient.query.filter_by(mrn=mrn).all()   # Uncomment when patient_medications is working
     db_conditions = Conditions.query.all()
     return render_template("patient_details.html", patient_details = patient_details, 
-        patient_conditions = patient_conditions, patient_medications = patient_medications,
+        patient_conditions = patient_conditions, #patient_medications = patient_medications,   # Uncomment when patient_medications is working
         db_conditions = db_conditions)
 
 
